@@ -106,19 +106,14 @@ static void displayCountries(ArrayList<String> travelerNames, ArrayList<HashSet<
     Scanner sc = new Scanner(System.in);
     System.out.println("Please enter the name of the traveler.");
     String traveler = sc.nextLine();
-    int t = 0;
-    for(String n: travelerNames){
-        if(n == traveler){
-            t = travelerNames.indexOf(traveler);
-        }
-    }
+    int t = travelerNames.indexOf(traveler);
+        
     System.out.println(String.format("You selected %s", traveler, "."));
     System.out.println("They have visited:");
-    for(int i = 0; i < countriesVisited.size(); i++){
         HashSet<String> tCountries = countriesVisited.get(t);
         for(String trC: tCountries){
             System.out.println(trC);
         }
-    }
+    
 }
 }
